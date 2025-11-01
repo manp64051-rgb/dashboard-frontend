@@ -11,6 +11,7 @@ export default function AuthPage() {
     confirmPassword: "",
   });
   const [message, setMessage] = useState("");
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,7 +29,7 @@ const handleSubmit = async (e) => {
       if (formData.password.length < 6) return setMessage("❌ Password too short");
 
       // Backend login
-      const res = await axios.post("http://localhost:5000/login", {
+      const res = await axios.post("${process.env.REACT_APP_API_URL}login", {
         email: formData.email,
         password: formData.password,
       });
@@ -56,7 +57,7 @@ const handleSubmit = async (e) => {
       if (formData.password !== formData.confirmPassword) return setMessage("❌ Passwords do not match");
 
       // Backend register
-      const res = await axios.post("http://localhost:5000/register", {
+      const res = await axios.post("${process.env.REACT_APP_API_URL}/register", {
         name: formData.name,
         email: formData.email,
         password: formData.password,

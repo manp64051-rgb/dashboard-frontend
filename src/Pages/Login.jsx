@@ -11,7 +11,7 @@ export default function AuthPage() {
     confirmPassword: "",
   });
   const [message, setMessage] = useState("");
-  const API_URL = import.meta.env.VITE_API_URL || process.env.REACT_APP_API_URL; 
+  const API_URL = import.meta.env.VITE_API_URL; 
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

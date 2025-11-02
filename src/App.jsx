@@ -7,6 +7,7 @@ import PrivateRoute from "./Pages/PrivateRoute";
 import SpeechTranslate from "./Pages/SpeechTranslate";
 import "./App.css"
 import AdminDashboard from "./Pages/AdminDashboard/AdminDashboard";
+import.meta.env.VITE_API_URL
 
 function App() {
   return (

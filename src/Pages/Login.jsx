@@ -29,7 +29,7 @@ const handleSubmit = async (e) => {
       if (formData.password.length < 6) return setMessage("❌ Password too short");
 
       // Backend login
-      const res = await axios.post('${API_URL}/login', {
+      const res = await axios.post(`${API_URL}/login`, {
         email: formData.email,
         password: formData.password,
       });
@@ -57,7 +57,7 @@ const handleSubmit = async (e) => {
       if (formData.password !== formData.confirmPassword) return setMessage("❌ Passwords do not match");
 
       // Backend register
-      const res = await axios.post('${API_URL}/register', {
+      const res = await axios.post(`${API_URL}/register`, {
         name: formData.name,
         email: formData.email,
         password: formData.password,

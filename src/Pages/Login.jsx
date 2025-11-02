@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Auth.css";
+import "./Auth.css"
 
 export default function AuthPage() {
   const [view, setView] = useState("login");

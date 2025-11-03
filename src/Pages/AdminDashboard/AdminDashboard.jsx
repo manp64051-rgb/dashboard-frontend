@@ -105,7 +105,7 @@ function AdminDashboard() {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
-      await fetch(`${API_URL}users/${id}`, { method: "DELETE" });
+      await fetch(`${API_URL}/users/${id}`, { method: "DELETE" });
       fetchUsers();
     } catch (err) {
       console.error("Error deleting user:", err);

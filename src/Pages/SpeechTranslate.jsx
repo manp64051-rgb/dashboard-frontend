@@ -20,8 +20,8 @@ function TTS() {
   const getLibreTranslateURL = async () => {
     try {
       // Try local first
-      const localCheck = await fetch("http://127.0.0.1:5000", { method: "GET" });
-      if (localCheck.ok) return "http://127.0.0.1:5000/translate";
+      const localCheck = await fetch(`${API_URL}`, { method: "GET" });
+      if (localCheck.ok) return `${API_URL}/translate`;
     } catch {
       console.warn("Local LibreTranslate not found, using online fallback.");
     }

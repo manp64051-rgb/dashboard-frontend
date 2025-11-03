@@ -73,7 +73,7 @@ function AdminDashboard() {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/users");
+      const res = await fetch(`${API_URL}/users`);
       const data = await res.json();
       setUsers(data);
     } catch (err) {
@@ -88,7 +88,7 @@ function AdminDashboard() {
   const handleSave = async () => {
     if (!editingUser) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/users/${editingUser._id}`, {
+      const res = await fetch(`${API_URL}/users/${editingUser._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(editingUser),
@@ -105,7 +105,7 @@ function AdminDashboard() {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
-      await fetch(`http://localhost:5000/apie/users/${id}`, { method: "DELETE" });
+      await fetch(`${API_URL}users/${id}`, { method: "DELETE" });
       fetchUsers();
     } catch (err) {
       console.error("Error deleting user:", err);

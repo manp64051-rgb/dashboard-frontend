@@ -10,8 +10,11 @@ export default function AuthPage() {
     password: "",
     confirmPassword: "",
   });
+  axios.defaults.withCredentials = true;
+
   const [message, setMessage] = useState("");
   const API_URL = import.meta.env.VITE_API_URL; 
+  console.log(API_URL);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
